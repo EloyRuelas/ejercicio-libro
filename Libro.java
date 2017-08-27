@@ -55,7 +55,14 @@ public class Libro
     
     public void cambiaNumRef(String numRef)
     {
-        numeroDeReferencia=numRef;
+        if(numRef.length()>2)
+        {
+            numeroDeReferencia=numRef;
+        }
+        else
+        {
+            numeroDeReferencia=numeroDeReferencia;
+        }
     }
     
     public String dimeNumRef()
