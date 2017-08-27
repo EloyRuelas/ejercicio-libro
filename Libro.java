@@ -3,12 +3,14 @@ public class Libro
     private String titulo;
     private String autor;
     private int paginas;
+    private String numeroDeReferencia;
     
     public Libro(String iniTitulo, String iniAutor, int numPaginas)
     {
         titulo=iniTitulo;
         autor=iniAutor;
         paginas=numPaginas;
+        numeroDeReferencia="";
     }
     
     public String dimeAutor()
@@ -37,9 +39,29 @@ public class Libro
         cadResultado+=", ";
         cadResultado+="Paginas: ";
         cadResultado+=paginas;
+        if(numeroDeReferencia.length()!=0)
+        {
+            cadResultado+=",";
+            cadResultado+="Numero de Referencia: ";
+            cadResultado+=numeroDeReferencia;
+        }
+        else
+        {
+            cadResultado+=",";
+            cadResultado+="ZZZ";
+        }
         return cadResultado;
     }
     
+    public void cambiaNumRef(String numRef)
+    {
+        numeroDeReferencia=numRef;
+    }
+    
+    public String dimeNumRef()
+    {
+        return numeroDeReferencia;
+    }
     
 }
     
